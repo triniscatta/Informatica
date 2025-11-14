@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiante</title>
+</head>
+<body>
+    <h1>Registro de Estudiante</h1>
+    <form onsubmit="enviarDatos(event)">
+        <label>Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+        <label>Apellido:</label>
+        <input type="text" id="apellido" required><br><br>
+        <label>Curso:</label>
+        <input type="text" id="curso" required><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function enviarDatos(e) {
+            e.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const curso = document.getElementById("curso").value;
+            const mensaje = Bienvenido ${nombre} ${apellido} al curso &curso};
+            const nuevaPagina = window.open("", "_blank");
+            nuevaPagina.document.write(<h1>${mensaje}</h1>);
+        }
+    </script>
+</body>
+</html>
